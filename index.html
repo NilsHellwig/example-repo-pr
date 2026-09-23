@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="A simple dummy task list application." />
-    <meta name="author" content="Dummy App" />
-    <meta name="keywords" content="tasks, todo, list, dummy" />
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#ffffff" />
-    <title>Dummy App</title>
-    <link rel="stylesheet" href="src/style.css" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="A simple dummy task list application." />
+	<meta name="author" content="Dummy App" />
+	<meta name="keywords" content="tasks, todo, list, dummy" />
+	<meta name="robots" content="index, follow" />
+	<meta name="theme-color" content="#ffffff" />
+	<title>Dummy App</title>
+	<link rel="stylesheet" href="src/style.css" />
 </head>
 <body>
-   <main class="app">
-     <h1>Dummy Task List</h1>
-     <form id="task-form">
-       <input type="text" id="task-input" placeholder="Add a task..." autocomplete="off" />
-       <button type="submit">Add</button>
-     </form>
-     <ul id="task-list"></ul>
-   </main>
-   <script src="src/app.js"></script>
+	<main class="app">
+			<h1>Dummy Task List</h1>
+			<!-- task-form: pressing Enter in the input submits and adds the task -->
+			<form id="task-form">
+				<input type="text" id="task-input" placeholder="Add a task..." autocomplete="off" />
+				<button type="submit">Add</button>
+			</form>
+			<!-- task-list: li elements are dynamically created and appended by app.js -->
+			<ul id="task-list"></ul>
+			<!-- task-counter: dynamically updated by app.js (updateCounter) to show remaining task count -->
+			<p id="task-counter" aria-live="polite"></p>
+	</main>
+	<script src="src/app.js"></script>
 </body>
 </html>
