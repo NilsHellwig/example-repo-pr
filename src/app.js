@@ -15,8 +15,7 @@ function addTask(text) {
   span.textContent = text;
   span.addEventListener("click", () => {
     li.classList.toggle("done");
-    const remaining = list.querySelectorAll("li:not(.done)").length;
-    counter.textContent = remaining === 1 ? "1 task left" : remaining + " tasks left";
+    updateCounter();
   });
 
   const removeBtn = document.createElement("button");
@@ -24,15 +23,13 @@ function addTask(text) {
   removeBtn.className = "remove";
   removeBtn.addEventListener("click", () => {
     li.remove();
-    const remaining = list.querySelectorAll("li:not(.done)").length;
-    counter.textContent = remaining === 1 ? "1 task left" : remaining + " tasks left";
+    updateCounter();
   });
 
   li.append(span, removeBtn);
   list.append(li);
 
-  const remaining = list.querySelectorAll("li:not(.done)").length;
-  counter.textContent = remaining === 1 ? "1 task left" : remaining + " tasks left";
+  updateCounter();
 }
 
 form.addEventListener("submit", (event) => {
