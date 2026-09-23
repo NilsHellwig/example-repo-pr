@@ -22,7 +22,9 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const text = input.value.trim();
   if (!text) return;
-
+  addTask(text);
+  input.value = "";
+  input.focus();
   if (text.length > 0) {
     const li = document.createElement("li");
     const span = document.createElement("span");
