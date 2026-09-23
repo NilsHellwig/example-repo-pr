@@ -3,6 +3,11 @@ const input = document.getElementById("task-input");
 const list = document.getElementById("task-list");
 const counter = document.getElementById("task-counter");
 
+function updateCounter() {
+  const remaining = list.querySelectorAll("li:not(.done)").length;
+  counter.textContent = remaining === 1 ? "1 task left" : remaining + " tasks left";
+}
+
 function addTask(text) {
   const li = document.createElement("li");
 
