@@ -40,3 +40,5 @@ form.addEventListener("submit", (event) => {
   input.value = "";
   input.focus();
 });
+
+updateCounter();
