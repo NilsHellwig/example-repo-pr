@@ -4,41 +4,41 @@ const list = document.getElementById("task-list");
 const counter = document.getElementById("task-counter");
 
 function updateCounter() {
-  const remaining = list.querySelectorAll("li:not(.done)").length;
-  counter.textContent = remaining === 1 ? "1 task left" : remaining + " tasks left";
+	const remaining = list.querySelectorAll("li:not(.done)").length;
+	counter.textContent = remaining === 1 ? "1 task left" : remaining + " tasks left";
 }
 
 function addTask(text) {
-  const li = document.createElement("li");
+	const li = document.createElement("li");
 
-  const span = document.createElement("span");
-  span.textContent = text;
-  span.addEventListener("click", () => {
-    li.classList.toggle("done");
-    updateCounter();
-  });
+	const span = document.createElement("span");
+	span.textContent = text;
+	span.addEventListener("click", () => {
+		li.classList.toggle("done");
+		updateCounter();
+	});
 
-  const removeBtn = document.createElement("button");
-  removeBtn.textContent = "×";
-  removeBtn.className = "remove";
-  removeBtn.addEventListener("click", () => {
-    li.remove();
-    updateCounter();
-  });
+	const removeBtn = document.createElement("button");
+	removeBtn.textContent = "×";
+	removeBtn.className = "remove";
+	removeBtn.addEventListener("click", () => {
+		li.remove();
+		updateCounter();
+	});
 
-  li.append(span, removeBtn);
-  list.append(li);
+	li.append(span, removeBtn);
+	list.append(li);
 
-  updateCounter();
+	updateCounter();
 }
 
 form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const text = input.value.trim();
-  if (!text) return;
-  addTask(text);
-  input.value = "";
-  input.focus();
+	event.preventDefault();
+	const text = input.value.trim();
+	if (!text) return;
+	addTask(text);
+	input.value = "";
+	input.focus();
 });
 
 updateCounter();
